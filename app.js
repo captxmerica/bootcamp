@@ -13,9 +13,9 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 //sucessfully added to git repo
 
+var url = process.env.DATABASEURL || "mongodb://localhost/yelpcamp2";
 
-
-mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+mongoose.connect(url, {useMongoClient: true});
 // mongoose.connect("mongodb://potato:password@ds241737.mlab.com:41737/yelpcampx", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
