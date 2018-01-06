@@ -13,8 +13,10 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes = require("./routes/index");
 //sucessfully added to git repo
 
-// mongoose.connect("mongodb://localhost/yelpcamp2", {useMongoClient: true});
-mongoose.connect("mongodb://potato:password@ds241737.mlab.com:41737/yelpcampx", {useMongoClient: true});
+
+
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+// mongoose.connect("mongodb://potato:password@ds241737.mlab.com:41737/yelpcampx", {useMongoClient: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
